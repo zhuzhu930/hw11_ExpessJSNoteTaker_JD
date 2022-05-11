@@ -1,14 +1,26 @@
 {
   "name": "note-taker",
   "version": "1.0.0",
-  "description": "",
+  "description": "This is a Note Taker App created by using Express.js and deployed on Heroku",
   "main": "server.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "node server.js"
   },
   "author": "",
   "license": "ISC",
   "dependencies": {
-    "express": "^4.16.4"
-  }
+    "express": "^4.18.1",
+    "inquire": "^0.4.8",
+    "jest": "^28.1.0"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/zhuzhu930/hw11_ExpessJSNoteTaker_JD.git"
+  },
+  "keywords": [],
+  "bugs": {
+    "url": "https://github.com/zhuzhu930/hw11_ExpessJSNoteTaker_JD/issues"
+  },
+  "homepage": "https://github.com/zhuzhu930/hw11_ExpessJSNoteTaker_JD#readme"
 }
