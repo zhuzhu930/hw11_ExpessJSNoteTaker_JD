@@ -70,4 +70,21 @@ app.get('/api/notes', (req, res) => {
 // POST Route for a new note
 app.post('/api/notes', (req, res) => {
     console.info(`${req.method} request received to add a note`);
-})
+
+    const { noteTitle, noteText, addedBy } = req.body;
+
+    if(req.body) {
+        const newNote = {
+            noteTitle, 
+            noteText, 
+            addedBy, 
+            note_id: uuid(), 
+        };
+
+        readAndAppend(newNote, './db/db.json');
+        res.json(`A new note is added successfully 🚀`);
+    } else {
+        res.error('Error, your note is not added');
+    }
+});
+
