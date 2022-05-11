@@ -12,7 +12,7 @@ const app = express();
 
 // Middleware for parsing JSON and urlencoded form data
 app.use(express.json());
-app.use(express.urlencoded({ entended: true}));
+app.use(express.urlencoded({ extended: true}));
 app.use(express.static('public'));
 
 // GET Route for index.html
@@ -71,13 +71,13 @@ app.get('/api/notes', (req, res) => {
 app.post('/api/notes', (req, res) => {
     console.info(`${req.method} request received to add a note`);
 
-    const { noteTitle, noteText, addedBy } = req.body;
+    const { noteTitle, noteText } = req.body;
 
     if(req.body) {
         const newNote = {
             noteTitle, 
             noteText, 
-            addedBy, 
+            // addedBy, 
             note_id: uuid(), 
         };
 
