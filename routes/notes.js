@@ -17,7 +17,7 @@ notes.post('/', (req, res) => {
   //destructuring the items in req.body
   const { noteTitle, noteText } = req.body;
 
-  if (req.body) {
+  if (noteTitle && noteText) {//variable for the object will be saved
     const newNote = {
       noteTitle,
       noteText,
@@ -27,7 +27,7 @@ notes.post('/', (req, res) => {
     readAndAppend(newNote, './db/db.json');
     
     const response = {
-      status: "Success", 
+      status: "Success!", 
       body: newNote,
     };
 
