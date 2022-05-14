@@ -49,7 +49,7 @@ notes.post('/notes', (req, res) => {
   //destructuring the items in req.body
   const { title, text } = req.body;
 
-  if (req.body) {
+  if (title && text) {
     //variable for the object will be saved
     const newNote = {
       title,
