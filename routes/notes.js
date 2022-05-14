@@ -33,7 +33,7 @@ notes.post('/', (req, res) => {
 
     res.json(response);
   } else {
-    res.error('Error in adding a note.');
+    res.json('Error in adding a note.');
   }
 });
 
