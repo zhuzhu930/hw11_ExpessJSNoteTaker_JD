@@ -11,7 +11,7 @@ const app = express();
 app.use(express.json());
 app.use(express.urlencoded({ extended: true}));
 app.use('/api', api);
-app.use(express.static('public'));
+app.use(express.static('public')); //we don't need to write routes for all the files in the public folder. 
 
 // GET Route for index.html
 app.get('/', (req, res) =>
