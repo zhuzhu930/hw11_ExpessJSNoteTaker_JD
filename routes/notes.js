@@ -7,7 +7,7 @@ const {
 } = require('../helpers/fsUtils');
 
 // GET Route for retrieving all the notes
-notes.get('/', (req, res) => {
+notes.get('/notes', (req, res) => {
   readFromFile('./db/db.json').then((data) => res.json(JSON.parse(data)));
 });
 
@@ -44,16 +44,16 @@ notes.delete('/:note_id', (req, res) => {
 });
 
 // POST Route for a new note
-notes.post('/', (req, res) => {
+notes.post('/notes', (req, res) => {
   console.log(req.body);
   //destructuring the items in req.body
-  const { noteTitle, noteText } = req.body;
+  const { title, text } = req.body;
 
   if (req.body) {
     //variable for the object will be saved
     const newNote = {
-      noteTitle,
-      noteText,
+      title,
+      text,
       note_id: uuidv4(),
     };
 
