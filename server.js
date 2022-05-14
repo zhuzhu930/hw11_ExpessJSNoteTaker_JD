@@ -2,7 +2,7 @@ const express = require('express');
 const path = require('path');
 const fs = require('fs');
 const util = require('util');
-
+// const api = require('./public/index.js');
 // Helper method for generating unique ids
 const uuid = require('./helpers/uuid');
 // Set the port
