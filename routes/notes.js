@@ -1,5 +1,5 @@
 const notes = require('express').Router();
-const { v4: uuidv4 } = require('../helpers/uuid');
+const { v4: uuidv4 } = require('uuid');
 const {
   readFromFile,
   readAndAppend,
@@ -8,13 +8,13 @@ const {
 
 // GET Route for retrieving all the notes
 notes.get('/', (req, res) => {
-  readFromFile('../db/db.json').then((data) => res.json(JSON.parse(data)));
+  readFromFile('./db/db.json').then((data) => res.json(JSON.parse(data)));
 });
 
 // GET Route for a specific note
 notes.get('/:note_id', (req, res) => {
   const noteId = req.params.note_id;
-  readFromFile('../db/db.json')
+  readFromFile('./db/db.json')
     .then((data) => JSON.parse(data))
     .then((json) => {
       const result = json.filter((note) => note.note_id === noteId);
@@ -27,21 +27,21 @@ notes.get('/:note_id', (req, res) => {
 // DELETE Route for a specific note
 notes.delete('/:note_id', (req, res) => {
   const noteId = req.params.note_id;
-  readFromFile('../db/db.json')
+  readFromFile('./db/db.json')
     .then((data) => JSON.parse(data))
     .then((json) => {
-      // Make a new array of all notes except the one with the ID provided in the URL
+      // Make a new array of all notes except the one with the ID provided
       const result = json.filter((note) => note.note_id !== noteId);
 
-      // Save that array to the filesystem
-      writeToFile('../db/db.json', result);
+      // Save that array
+      writeToFile('./db/db.json', result);
 
-      // Respond to the DELETE request
-      res.json(`Item ${noteId} has been deleted 🗑️`);
+      // Respond to DELETE
+      res.json(`Item ${noteId} has been deleted.`);
     });
 });
 
-// POST Route for a new UX/UI note
+// POST Route for a new note
 notes.post('/', (req, res) => {
   console.log(req.body);
 
@@ -54,8 +54,8 @@ notes.post('/', (req, res) => {
       note_id: uuidv4(),
     };
 
-    readAndAppend(newNote, '../db/db.json');
-    res.json(`A new note is added successfully 🚀`);
+    readAndAppend(newNote, './db/db.json');
+    res.json(`A new note is added.`);
   } else {
     res.error('Error in adding a note.');
   }
