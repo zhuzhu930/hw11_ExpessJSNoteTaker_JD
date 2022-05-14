@@ -2,15 +2,5 @@
     {
         "title": "Test Title",
         "text": "Test text"
-    },
-    {
-        "title": "First test",
-        "text": "Adding note",
-        "id": "6eee8efd-f64b-47ba-adfa-953bd9720137"
-    },
-    {
-        "title": "Third note",
-        "text": "testing adding and deleting",
-        "id": "2182138c-404e-4fe0-8d6c-1d638c1d4e88"
     }
 ]

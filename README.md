@@ -25,20 +25,6 @@ Please tell us the 3 simple steps for installing your app.
 - Step 2: Go to the page: http;//localhost:3001, click on the button will redirect you to the note taking page.
 - Step 3: Start adding note title and text then click the save button at the top right corner; you can also delete a note if you don't need it any more.
 
-## Usage
-
-- Please see the above.
-- Screenshots of the App
-
-  Terminal side:
-  ![Terminal](assets/images/terminalside.png)
-
-  VS code side:
-  ![VS code](assets/images/queryscreen.png)
-
-  Generated Readme.md:
-  ![Generated file](assets/images/generatedreadme.png)
-
 ## Credits
 
 Collaborators: I've no collaborators when designing and working on this app.
@@ -74,6 +60,7 @@ Collaborators: I've no collaborators when designing and working on this app.
 ## Badges
 
 ![Readme_Generator](https://img.shields.io/badge/Readme.md-Generator%20v1.0-blue)
+![Note_Taker](https://img.shields.io/badge/NoteTaker-Express.js-lightgrey)
 
 ## Features
 
@@ -83,8 +70,10 @@ Collaborators: I've no collaborators when designing and working on this app.
 
 - This repo is open to the public free of charge, I welcome all the contributions to improve this app.
 
-## Demo URL
+## URLs for Delivery
 
 Please feel free to take a look at the demo video of this app:
 
-[Demo link](https://drive.google.com/file/d/1PMw6HrfYfTd0uDhtfg4vlzsGgRSwDm-5/view)
+[Demo link](https://drive.google.com/file/d/1oZ--r2c7flmbrwkI3qOv8ItwmkJnLGl1/view)
+[Heroku link](https://obscure-lake-98693.herokuapp.com/)
+[GitHub link](https://github.com/zhuzhu930/hw11_ExpessJSNoteTaker_JD)
