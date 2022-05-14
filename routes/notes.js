@@ -11,31 +11,7 @@ notes.get('/', (req, res) => {
   readFromFile('./db/db.json').then((data) => res.json(JSON.parse(data)));
 });
 
-// POST Route for a new note
-notes.post('/', (req, res) => {
-  // console.log(req.body);
-  //destructuring the items in req.body
-  const { noteTitle, noteText } = req.body;
 
-  if (req.body) {//variable for the object will be saved
-    const newNote = {
-      noteTitle,
-      noteText,
-      note_id: uuidv4(),
-    };
-
-    readAndAppend(newNote, './db/db.json');
-    
-    const response = {
-      status: "Success!", 
-      body: newNote,
-    };
-
-    res.json(response);
-  } else {
-    res.json('Error in adding a note.');
-  }
-});
 
 // GET Route for a specific note
 notes.get('/:note_id', (req, res) => {
@@ -67,6 +43,31 @@ notes.delete('/:note_id', (req, res) => {
     });
 });
 
+// POST Route for a new note
+notes.post('/', (req, res) => {
+  console.log(req.body);
+  //destructuring the items in req.body
+  const { noteTitle, noteText } = req.body;
 
+  if (req.body) {
+    //variable for the object will be saved
+    const newNote = {
+      noteTitle,
+      noteText,
+      note_id: uuidv4(),
+    };
+
+    readAndAppend(newNote, './db/db.json');
+    
+    const response = {
+      status: "Success!", 
+      body: newNote,
+    };
+
+    res.json(response);
+  } else {
+    res.json('Error in adding a note.');
+  }
+});
 
 module.exports = notes;

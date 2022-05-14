@@ -1,12 +1,10 @@
 const express = require('express');
 const path = require('path');
-// const fsUtils = require('fsUtils');
 const api = require('./routes/index.js');
-// Helper method for generating unique ids
-// const uuid = require('./helpers/uuid');
+
 // Set the port
 const PORT = process.env.PORT || 3001;
-// Open up the app
+// Open up the Express app
 const app = express();
 
 // Middleware for parsing JSON and urlencoded form data
