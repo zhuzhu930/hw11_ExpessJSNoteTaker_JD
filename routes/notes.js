@@ -47,7 +47,7 @@ notes.post('/', (req, res) => {
   //destructuring the items in req.body
   const { noteTitle, noteText } = req.body;
 
-  if (noteTitle && noteText) {
+  if (req.body) {
     const newNote = {
       noteTitle,
       noteText,
