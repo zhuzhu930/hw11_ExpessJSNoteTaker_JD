@@ -43,11 +43,11 @@ notes.delete('/:note_id', (req, res) => {
 
 // POST Route for a new note
 notes.post('/', (req, res) => {
-  console.log(req.body);
-
+  // console.log(req.body);
+  //destructuring the items in req.body
   const { noteTitle, noteText } = req.body;
 
-  if (req.body) {
+  if (noteTitle && noteText) {
     const newNote = {
       noteTitle,
       noteText,
@@ -55,7 +55,13 @@ notes.post('/', (req, res) => {
     };
 
     readAndAppend(newNote, './db/db.json');
-    res.json(`A new note is added.`);
+    
+    const response = {
+      status: "Success", 
+      body: newNote,
+    };
+
+    res.json(response);
   } else {
     res.error('Error in adding a note.');
   }
